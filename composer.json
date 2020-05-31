@@ -1,0 +1,39 @@
+{
+    "name": "undeadline/mailer-local-laravel",
+    "description": "After install this package set default recipient for mailer",
+    "keywords": ["mailer", "local", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Evgeny Mishanin",
+            "email": "ermak321@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "type": "library",
+    "require": {
+		"php": ">=7.2"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "9.*",
+        "orchestra/testbench": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Undeadline\\LM\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Undeadline\\LM\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Undeadline\\LM\\LocalMailerServiceProvider"
+            ]
+        }
+    }
+}
