@@ -19,7 +19,7 @@ class LocalMailerServiceProvider extends ServiceProvider
             __DIR__ . '/config/config.php' => config_path('local-mail.php')
         ], 'config');
 
-        if (env('APP_ENV') === 'local') {
+        if (strtolower(env('APP_ENV')) !== 'production') {
             Event::listen(MessageSending::class, function($event) {
                 $event->message->setTo(config('local-mail.development.to'), config('local-mail.development.name'));
             });
